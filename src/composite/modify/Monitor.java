@@ -1,4 +1,4 @@
-package composite.init;
+package composite.modify;
 
 class Monitor {
     private int price;

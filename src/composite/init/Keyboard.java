@@ -14,15 +14,7 @@ class Keyboard {
         return price;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
     public int getPower() {
         return power;
-    }
-
-    public void setPower(int power) {
-        this.power = power;
     }
 }

@@ -1,10 +1,10 @@
-package composite.init;
+package composite.modify;
 
-class Monitor {
+class Speaker {
     private int price;
     private int power;
 
-    public Monitor(int price, int power) {
+    public Speaker(int price, int power) {
         this.price = price;
         this.power = power;
     }
