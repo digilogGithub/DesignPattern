@@ -2,13 +2,13 @@ package factoryMethod.recommend;
 
 class ResponseTimeScheduler implements ElevatorScheduler {
 
-    private static ResponseTimeScheduler responseTimeScheduler = new ResponseTimeScheduler();
+    private static ResponseTimeScheduler scheduler = new ResponseTimeScheduler();
 
     private ResponseTimeScheduler() {
     }
 
     public static ResponseTimeScheduler getInstance() {
-        return responseTimeScheduler;
+        return scheduler;
     }
 
     @Override

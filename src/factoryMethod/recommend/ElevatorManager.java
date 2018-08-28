@@ -3,28 +3,22 @@ package factoryMethod.recommend;
 import java.util.ArrayList;
 import java.util.List;
 
-class ElevatorManager {
+abstract class ElevatorManager {
     private List<ElevatorController> elevatorControllers;
-    private SchedulingStrategyID schedulingStrategyID;
 
-    public ElevatorManager(int controllerCnt, SchedulingStrategyID schedulingStrategyID) {
+    ElevatorManager(int controllerCnt) {
         elevatorControllers = new ArrayList<>(controllerCnt);
 
         for (int index = 0; index < controllerCnt; index++) {
-            ElevatorController elevatorController = new ElevatorController(index+1);
+            ElevatorController elevatorController = new ElevatorController(index + 1);
             elevatorControllers.add(elevatorController);
-//            System.out.println(elevatorControllers.size());
         }
-        this.schedulingStrategyID = schedulingStrategyID;
     }
 
-    void setSchedulingStrategyID(SchedulingStrategyID schedulingStrategyID) {
-        this.schedulingStrategyID = schedulingStrategyID;
-    }
-    
+    protected abstract ElevatorScheduler getScheduler();
+
     void requestElevator(int destination, Direction direction) {
-        ElevatorScheduler elevatorScheduler = SchedulerFactory.getScheduler(schedulingStrategyID);
-        System.out.println(elevatorScheduler);
+        ElevatorScheduler elevatorScheduler = getScheduler();
         int selectedElevator = elevatorScheduler.selectElevator(this, destination, direction);
         elevatorControllers.get(selectedElevator).gotoFloor(destination);
     }

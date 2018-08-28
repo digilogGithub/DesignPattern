@@ -7,7 +7,7 @@ class LGMotor extends Motor {
     }
 
     @Override
-    void moveMotor(Direction direction) {
+    protected void moveMotor(Direction direction) {
         System.out.println("Start LGMotor moving : " + direction);
     }
 }

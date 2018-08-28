@@ -6,7 +6,7 @@ class HyndaiMotor extends Motor {
         super(door);
     }
 
-    void moveMotor(Direction direction) {
+    protected void moveMotor(Direction direction) {
         System.out.println("Start HyundaiMotor moving : " + direction);
     }
 }

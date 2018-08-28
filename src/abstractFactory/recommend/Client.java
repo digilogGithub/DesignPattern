@@ -26,7 +26,5 @@ class Client {
         motor.setDoor(door);
         door.open();
         motor.move(Direction.DOWN);
-
-
     }
 }

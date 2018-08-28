@@ -1,18 +1,18 @@
 package templateMethod.recommend;
 
 abstract class Motor {
-    protected Door door;
+    private Door door;
     private MotorStatus motorStatus;
 
     Motor(Door door) {
         this.door = door;
-        this.motorStatus = motorStatus;
+        this.motorStatus = MotorStatus.STOPPED;
     }
 
     MotorStatus getMotorStatus() {
         return motorStatus;
     }
-    protected void setMotorStatus(MotorStatus motorStatus) {
+    private void setMotorStatus(MotorStatus motorStatus) {
         this.motorStatus = motorStatus;
     }
 
@@ -28,5 +28,5 @@ abstract class Motor {
         moveMotor(direction);
         setMotorStatus(MotorStatus.MOVING);
     }
-    abstract void moveMotor(Direction direction);
+    protected abstract void moveMotor(Direction direction);
 }
