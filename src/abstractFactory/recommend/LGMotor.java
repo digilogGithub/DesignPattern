@@ -1,8 +1,8 @@
 package abstractFactory.recommend;
 
-class LGMotor extends Motor {
+class LGMotor extends MotorPart {
     @Override
     void moveMotor(Direction direction) {
-        System.out.println("Start LG Motor moving : " + direction);
+        System.out.println("Start LG MotorPart moving : " + direction);
     }
 }

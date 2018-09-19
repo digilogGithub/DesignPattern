@@ -1,8 +1,8 @@
 package abstractFactory.recommend;
 
-abstract class Door {
+abstract class DoorPart {
     private DoorStatus doorStatus;
-    Door() {
+    DoorPart() {
         doorStatus = DoorStatus.CLOSED;
     }
 

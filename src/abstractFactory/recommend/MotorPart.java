@@ -1,10 +1,10 @@
 package abstractFactory.recommend;
 
-abstract class Motor {
+abstract class MotorPart {
     private MotorStatus motorStatus;
-    private Door door;
+    private DoorPart doorPart;
 
-    Motor() {
+    MotorPart() {
         motorStatus = MotorStatus.STOPPED;
     }
 
@@ -12,8 +12,8 @@ abstract class Motor {
         this.motorStatus = motorStatus;
     }
 
-    void setDoor(Door door) {
-        this.door = door;
+    void setDoorPart(DoorPart doorPart) {
+        this.doorPart = doorPart;
     }
 
     MotorStatus getMotorStatus() {
@@ -21,8 +21,8 @@ abstract class Motor {
     }
 
     void move(Direction direction) {
-        if(door.getDoorStatus() == DoorStatus.OPENED)
-            door.close();
+        if(doorPart.getDoorStatus() == DoorStatus.OPENED)
+            doorPart.close();
         moveMotor(direction);
     }
 

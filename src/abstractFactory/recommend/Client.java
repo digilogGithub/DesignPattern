@@ -4,27 +4,27 @@ class Client {
     public static void main(String[] args) {
         SelectVendor selectVendor = new SelectVendor();
         String vendorName = selectVendor.getVendor();
-        ElevatorFactory factory = null;
-        Motor motor;
-        Door door;
+        ElevatorPartFactory factory = null;
+        MotorPart motorPart;
+        DoorPart doorPart;
 
         switch (vendorName){
             case "1":
-                factory = HyundaiElevatorFactory.getInstance();
+                factory = HyundaiElevatorPartFactory.getInstance();
                 break;
             case "2":
-                factory = LGElevatorFactory.getInstance();
+                factory = LGElevatorPartFactory.getInstance();
                 break;
             case "3":
-                factory = SamsungElevatorFactory.getInstance();
+                factory = SamsungElevatorPartFactory.getInstance();
                 break;
         }
 
-        motor = factory.createMotor();
-        door = factory.createDoor();
+        motorPart = factory.createMotor();
+        doorPart = factory.createDoor();
 
-        motor.setDoor(door);
-        door.open();
-        motor.move(Direction.DOWN);
+        motorPart.setDoorPart(doorPart);
+        doorPart.open();
+        motorPart.move(Direction.DOWN);
     }
 }
