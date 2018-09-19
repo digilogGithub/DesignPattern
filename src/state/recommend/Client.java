@@ -3,15 +3,15 @@ package state.recommend;
 class Client {
     public static void main(String[] args) {
 
-        Light light = new Light();
+        Lamp lamp = new Lamp();
 
-        light.off_button_pushed();
-        light.on_button_pushed();
-        light.on_button_pushed();
-        light.on_button_pushed();
-        light.off_button_pushed();
-        light.on_button_pushed();
-        light.off_button_pushed();
+        lamp.off_button_pushed();
+        lamp.on_button_pushed();
+        lamp.on_button_pushed();
+        lamp.on_button_pushed();
+        lamp.off_button_pushed();
+        lamp.on_button_pushed();
+        lamp.off_button_pushed();
 
     }
 }

@@ -1,11 +1,11 @@
 package state.recommend;
 
-class Light {
+class Lamp {
 
     private State state;
 
-    Light() {
-        state = new OFF();
+    Lamp() {
+        state = OFF.getInstance();
     }
 
     void setState(State state) {
